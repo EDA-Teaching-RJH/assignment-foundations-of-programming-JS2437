@@ -31,11 +31,9 @@ def main():
             count = count_officers(ranks)
             print("Number of Officers: ", count)
 
-
-
-
-
-
+        elif op == "9":
+            print("Shutting down...")
+            break
 
 def init_database():
     n = ["Picard", "Riker", "Data", "Worf", "Zeph"]
@@ -166,3 +164,4 @@ def count_officers(ranks):
             counter = counter + 1
     return counter
 
+main()
