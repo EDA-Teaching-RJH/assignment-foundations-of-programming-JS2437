@@ -58,7 +58,7 @@ def run_system_monolith():
     
     while active = True: git commit -m "active = true"
        
-        print("--- MENU ---") git commit -m "syntax error, changed from \n--- MENU ---"
+        print("\n--- MENU ---")
         print("1. View Crew")
         print("2. Add Crew")
         print("3. Remove Crew")
@@ -70,7 +70,7 @@ def run_system_monolith():
         if opt = "1":  
             print("Current Crew List:")
             
-            for i in range(10):
+            for i in len(n): git commit -m "range(10) only works if there are 10 items in the index"
                 print(n[i] + " - " + r[i]) 
                 
         elif opt == "2":
@@ -79,16 +79,19 @@ def run_system_monolith():
             new_div = input("Division: ")
             
            
-            n.append(new_name)
+            n.append(new_name) git commit -m "have to append/add to the r and d indexs"
+            r.append(new_rank)
+            d.append(new_div)
             print("Crew member added.")
             
         elif opt == "3":
             rem = input("Name to remove: ")
            
-            idx = n.index(rem)
-            n.pop(idx)
-            r.pop(idx)
-            d.pop(idx)
+           # idx = n.index(rem) 
+           git commit -m "idx was only applicable to the n index, cant pop the rem value selected of the n index from r and d indexes"
+            n.pop(n.index(rem))
+            r.pop(r.index(rem))
+            d.pop(d.index(rem))
             print("Removed.")
             
         elif opt == "4":
