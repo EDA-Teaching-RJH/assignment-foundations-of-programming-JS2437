@@ -56,7 +56,7 @@ def run_system_monolith():
         print("Loading module " + str(loading))
         
     
-    while active = True: git commit -m "active = true"
+    while True:
        
         print("\n--- MENU ---")
         print("1. View Crew")
