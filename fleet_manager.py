@@ -26,6 +26,10 @@ def main():
         elif op == "7":
             Payment = calculate_payroll(ranks)
             print("Cost for full crew: ", Payment)
+        
+        elif op == "8":
+            count = count_officers(ranks)
+            print("Number of Officers: ", count)
 
 
 
@@ -154,4 +158,11 @@ def calculate_payroll(ranks):
             Payment = Payment + 200
 
     return(Payment)
+
+def count_officers(ranks):
+    counter = 0
+    for i in range(len(ranks)):
+        if ranks[i] == "Commander" or ranks[i] == "Captain":
+            counter = counter + 1
+    return counter
 
