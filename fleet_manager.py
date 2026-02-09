@@ -4,7 +4,7 @@ def main():
 
     print(uName, " succesfully logged in.")
     while True:
-        opt = display_menu()
+        op = display_menu()
         if op == "1":
             display_roster(names, ranks, divisions, ids)
 
@@ -16,6 +16,9 @@ def main():
 
         elif op == "4":
             update_rank(names, ranks, ids)
+
+        elif op == "5":
+            search_crew(names, ranks, divisions, ids)
 
 
 
@@ -102,3 +105,10 @@ def display_roster(n, r, d, i):
 
     for id, name, rank, division in zip(i, n, r, d):
         print(f"{id:<5} {name:<10} {rank:>20} {division:>20}")
+
+def search_crew(n, r, d, i):
+    SearchTerm = input("Please enter a search term: ")
+    for int in range(len(n)):
+        if SearchTerm == n[int]:
+            print(n[int], " ", r[int], " ", d[int], " ", i[int])
+
