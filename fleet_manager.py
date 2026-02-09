@@ -100,7 +100,7 @@ def remove_member(n, r, d, i):
     return n, r, d, i
 
 def update_rank(n, r, i):
-    id = input("Enter the ID of the member whose rank you wish to change: ")
+    id = input("Enter the ID of the member whose rank is to be altered: ")
     new_rank = input("Enter the new rank: ")
 
     for int in range(len(i)):
@@ -121,9 +121,9 @@ def search_crew(n, r, d, i):
             print(n[int], " ", r[int], " ", d[int], " ", i[int])
 
 def filter_by_division(n, d):
-    op = input("Enter a division (Command, Operations, Sciences, Security): ")
+    op = input("Enter a division (Command, Operations, Security, Sciences): ")
 
-    if op == "Command" or op == "Operations" or op == "Sciences" or op == "Security":
+    if op == "Command" or op == "Operations" or op == "Security" or op == "Sciences":
         for i in range(len(n)):
             if d[i] == "Command" and op == "Command":
                 print(n[i], " ", d[i])
@@ -131,10 +131,10 @@ def filter_by_division(n, d):
             elif d[i] == "Operations" and op == "Operations":
                 print(n[i], " ", d[i])
 
-            elif d[i] == "Sciences" and op == "Sciences":
+            elif d[i] == "Security" and op == "Security":
                 print(n[i], " ", d[i])
 
-            elif d[i] == "Security" and op == "Security":
+            elif d[i] == "Sciences" and op == "Sciences":
                 print(n[i], " ", d[i])
 
             else:
