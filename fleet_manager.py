@@ -7,6 +7,9 @@ def main():
         opt = display_menu()
         if op == "1":
             display_roster(names, ranks, divisions, ids)
+        elif op == "2":
+            names, ranks, divisions, ids = add_member(names, ranks, divisions, ids)
+
 
 
 
@@ -33,6 +36,40 @@ def display_menu():
     print("8) Count Officers")
     opt = input("Select option: ")
     return opt
+
+def add_member(n, r, d, i):
+    name = input("Enter name to be added:")
+
+    n.append(name)
+
+    rank = input("Enter rank: ")
+    if rank == "Crewman Third Class" or rank == "Crewman Second Class" or rank == "Crewman First Class":
+        r.append(rank)
+
+    elif rank == "Ensign" or rank == "Lieutenant":
+        r.append(rank)
+
+    elif rank == "Commander" or rank == "Captain" or rank == "Lt. Commander":
+        r.append(rank)
+
+    elif rank == "Commodore" or rank == "Rear Admiral" or rank == "Vice Admiral":
+        r.append(rank)
+
+    else:
+        print("Invalid.")
+        add_member(n, r, d, i)
+
+    division = input("Enter division: ")
+    d.append(division)
+    id = input("Enter new ID: ")
+    for int in range(len(id)):
+        if id == i[int]:
+            print("Invalid.")
+            add_member(n, r, d, i)
+        else:
+            i.append(id)
+
+    return n, r, d, i
 
 def display_roster(n, r, d, i):
     print(f"{'ID':<5} {'Name':<10} {'Rank':>20} {'Division':>20}")
