@@ -23,6 +23,9 @@ def main():
         elif op == "6":
             filter_by_division(names, divisions)
 
+        elif op == "7":
+            Payment = calculate_payroll(ranks)
+            print("Cost for full crew: ", Payment)
 
 
 
@@ -110,13 +113,13 @@ def display_roster(n, r, d, i):
         print(f"{id:<5} {name:<10} {rank:>20} {division:>20}")
 
 def search_crew(n, r, d, i):
-    SearchTerm = input("Please enter a search term: ")
+    SearchTerm = input("Enter a search term: ")
     for int in range(len(n)):
         if SearchTerm == n[int]:
             print(n[int], " ", r[int], " ", d[int], " ", i[int])
 
 def filter_by_division(n, d):
-    op = input("Please enter a division (Command, Operations, Sciences, Security): ")
+    op = input("Enter a division (Command, Operations, Sciences, Security): ")
 
     if op == "Command" or op == "Operations" or op == "Sciences" or op == "Security":
         for i in range(len(n)):
@@ -135,4 +138,20 @@ def filter_by_division(n, d):
             else:
                 print("Invalid.")
 
+def calculate_payroll(ranks):
+    Payment = 0
+    for i in range(len(ranks)):
+        if ranks[i] == "Commodore" or ranks[i] == "Rear Admiral" or ranks[i] == "Vice Admiral":
+            Payment = Payment + 2000
+
+        elif ranks[i] == "Commander" or ranks[i] == "Captain":
+            Payment = Payment + 1000
+
+        elif ranks[i] == "Ensign" or ranks[i] == "Lieutenant":
+            Payment = Payment + 500
+
+        elif ranks[i] == "Crewman Third Class" or ranks[i] == "Crewman Second Class" or ranks[i] == "Crewman First Class":
+            Payment = Payment + 200
+
+    return(Payment)
 
