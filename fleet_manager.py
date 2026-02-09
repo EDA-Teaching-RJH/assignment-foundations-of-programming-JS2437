@@ -7,10 +7,15 @@ def main():
         opt = display_menu()
         if op == "1":
             display_roster(names, ranks, divisions, ids)
+
         elif op == "2":
             names, ranks, divisions, ids = add_member(names, ranks, divisions, ids)
+
         elif op == "3":
             names, ranks, divisions, ids = remove_member(names, ranks, divisions, ids)
+
+        elif op == "4":
+            update_rank(names, ranks, ids)
 
 
 
@@ -74,7 +79,7 @@ def add_member(n, r, d, i):
     return n, r, d, i
 
 def remove_member(n, r, d, i):
-    opt = input("Enter the ID you wish to remove: ")
+    opt = input("Enter the ID to be removed: ")
     idx = i.index(opt)
     n.pop(idx)
     r.pop(idx)
@@ -83,6 +88,13 @@ def remove_member(n, r, d, i):
 
     return n, r, d, i
 
+def update_rank(n, r, i):
+    id = input("Enter the ID of the member whose rank you wish to change: ")
+    new_rank = input("Enter the new rank: ")
+
+    for int in range(len(i)):
+        if i[int] == id:
+            r[int] = new_rank
 
 def display_roster(n, r, d, i):
     print(f"{'ID':<5} {'Name':<10} {'Rank':>20} {'Division':>20}")
