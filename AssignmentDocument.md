@@ -56,8 +56,9 @@ def run_system_monolith():
         print("Loading module " + str(loading))
         
     
-    while True:
-        print("\n--- MENU ---")
+    while active = True: git commit -m "active = true"
+       
+        print("--- MENU ---") git commit -m "syntax error, changed from \n--- MENU ---"
         print("1. View Crew")
         print("2. Add Crew")
         print("3. Remove Crew")
