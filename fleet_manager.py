@@ -19,6 +19,9 @@ def main():
 
         elif op == "5":
             search_crew(names, ranks, divisions, ids)
+    
+        elif op == "6":
+            filter_by_division(names, divisions)
 
 
 
@@ -111,4 +114,25 @@ def search_crew(n, r, d, i):
     for int in range(len(n)):
         if SearchTerm == n[int]:
             print(n[int], " ", r[int], " ", d[int], " ", i[int])
+
+def filter_by_division(n, d):
+    op = input("Please enter a division (Command, Operations, Sciences, Security): ")
+
+    if op == "Command" or op == "Operations" or op == "Sciences" or op == "Security":
+        for i in range(len(n)):
+            if d[i] == "Command" and op == "Command":
+                print(n[i], " ", d[i])
+
+            elif d[i] == "Operations" and op == "Operations":
+                print(n[i], " ", d[i])
+
+            elif d[i] == "Sciences" and op == "Sciences":
+                print(n[i], " ", d[i])
+
+            elif d[i] == "Security" and op == "Security":
+                print(n[i], " ", d[i])
+
+            else:
+                print("Invalid.")
+
 
