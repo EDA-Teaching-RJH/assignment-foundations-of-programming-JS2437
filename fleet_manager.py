@@ -5,6 +5,9 @@ def main():
     print(uName, " succesfully logged in.")
     while True:
         opt = display_menu()
+        if op == "1":
+            display_roster(names, ranks, divisions, ids)
+
 
 
 
@@ -30,3 +33,10 @@ def display_menu():
     print("8) Count Officers")
     opt = input("Select option: ")
     return opt
+
+def display_roster(n, r, d, i):
+    print(f"{'ID':<5} {'Name':<10} {'Rank':>20} {'Division':>20}")
+    print("---------------------------------------------------------------------------")
+
+    for id, name, rank, division in zip(i, n, r, d):
+        print(f"{id:<5} {name:<10} {rank:>20} {division:>20}")
